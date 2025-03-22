@@ -4,7 +4,7 @@ Bazı nesneleri kullanıp işimiz bittiğinde, artık onlara ihtiyacımız kalm�
 
 Garbage Collector, masamızdaki temizlikçi gibi düşünebiliriz. O, sürekli masayı kontrol ediyor ve artık kullanılmayan, işi bitmiş nesneleri tespit ediyor. Tıpkı bizim işimiz bitince çöpe attığımız kağıtlar gibi.
 
-Bu temizlikçi, yani GC, bu nesneleri bulduktan sonra onları masadan kaldırıyor, yani belleği temizliyor. Böylece, belleğimizde gereksiz yere yer kaplayan nesnelerden kurtulmuş oluyoruz ve yeni nesneler için yer açılıyor.
+ GC bu nesneleri bulduktan sonra onları masadan kaldırıyor, yani belleği temizliyor. Böylece belleğimizde gereksiz yere yer kaplayan nesnelerden kurtulmuş oluyoruz ve yeni nesneler için yer açılıyor.
 
 Garbage Collector'ın en önemli özelliklerinden biri  bu temizliği otomatik olarak yapması. Bizim elimizle tek tek nesneleri silmemize gerek kalmıyor. Tıpkı evdeki robot süpürge gibi işini kendi kendine hallediyor.
 
