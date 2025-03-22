@@ -1,0 +1,24 @@
+Generics
+Farz edelim ki bir sınıf ya da bir metot yazıyoruz ama bu sınıfın veya metodun hangi veri tipleriyle çalışacağını önceden bilmiyoruz. Bu sınıf hem tamsayılarla (int) hem metinlerle (string) hem de kendi oluşturduğumuz karmaşık nesnelerle çalışabilsin istiyoruz. İşte bu noktada Generic'ler devreye giriyor.
+
+Generic'ler sayesinde kodumuzu tekrar tekrar yazmak zorunda kalmıyoruz. Yani, farklı veri tipleriyle çalışacak ayrı ayrı sınıflar veya metotlar oluşturmak yerine tek bir Generic sınıf veya metot oluşturuyoruz. Bu da kodumuzun daha temiz ve yönetilebilir olmasını sağlıyor.
+
+Bir Generic sınıf veya metot tanımlarken, kullanacağımız veri tipini temsil eden bir "tip parametresi" belirtiyoruz. Bu tip parametresi, sınıf veya metot içinde sanki bir veri tipiymiş gibi kullanılıyor. Mesela, bir Generic liste sınıfı oluştururken, bu listede hangi tipte veriler saklanacağını tip parametresiyle belirtiyoruz.
+
+*-------------------------------------------------------------------------------*
+Boxing & Unboxing
+
+Boxing ve unboxing, value types ile referans tipleri reference types arasında dönüşüm yaparken ortaya çıkan bir olay. Value types (int, double vs.) doğrudan değeri saklarken, reference types (object, string, class vs.) değerin bellekteki adresini saklar.
+
+Boxing: Değer tipini referans tipine dönüştürme işlemine boxing denir. Mesela, bir tamsayıyı (int) object tipine dönüştürdüğümüzde, boxing yapmış oluruz. Bu işlem, değer tipini bir object nesnesi içine "paketlemek" gibi düşünülebilir.
+Unboxing: Referans tipini tekrar değer tipine dönüştürme işlemine de unboxing denir. Object tipindeki bir tamsayıyı tekrar int tipine dönüştürdüğümüzde, unboxing yapmış oluruz. Bu işlem de paketten değeri çıkarmak gibi düşünülebilir.
+
+Böyle anlatınca her şey havada kalıyor temelde neden ihtiyaç duyulduğunu anlamamız gerekiyor.
+
+ C#'ta bazı durumlarda, farklı veri tiplerini ,aynı yerde saklamak veya aynı metotlara göndermek isteyebiliriz. Mesela, bir listeye hem tamsayılar (int) hem de metinler (string) eklemek isteyebiliriz. Ya da bir metoda hem tamsayıları hem de nesneleri (object) parametre olarak göndermek isteyebiliriz.object tipi, herhangi bir veri tipini saklayabildiği için, farklı veri tiplerini aynı yerde saklamak istediğimizde boxing kullanırız. Örneğin, bir ArrayList veya Hashtable gibi koleksiyonlar, genellikle object tipinde verileri saklar. Önemli bir noktayı dda hatırlayalım ki, object veri tipi, C#'ta tüm veri tiplerinin "atasında" yer alır. Yani, herhangi bir veri tipini object tipine dönüştürebiliriz.
+
+Performans
+
+Boxing ve unboxing işlemlerinin performansa etkisini inceleyelim. Bu işlemler sırasında ek bellek tahsisi ve kopyalama işlemleri yapılıyor. Özellikle sık sık boxing ve unboxing yapılıyorsa, programın performansı düşebilir. Bu yüzden, mümkün olduğunca bu işlemlerden kaçınmak veya en aza indirmek önemlidir. Generic'ler, boxing ve unboxing'i önleyerek performansı artırabilir. Çünkü Generic'ler sayesinde, veri tipleriyle doğrudan çalışabiliriz ve gereksiz dönüşümlere gerek kalmaz.
+
+Özetle, Generic'ler bize farklı veri tipleriyle çalışabilen esnek sınıflar ve metotlar oluşturma imkanı sunarken, boxing ve unboxing de değer ve referans tipleri arasında dönüşüm yapmamızı sağlıyor. Ancak, boxing ve unboxing'in performansa etkisini de unutmamak lazım.
